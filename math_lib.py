@@ -20,15 +20,10 @@ def list_stdev(L):
     if len(L) == 0:
         return None
 
-    mean = list_mean(L)
-
     stdev = 0
 
+    mean = list_mean(L)
     for l in L:
         stdev += (l - mean) ** 2
 
-    return math.sqrt((1 / len(L)) * stdev)
-
-
-
-
+    return math.sqrt((1 / (len(L) - 1)) * stdev)
