@@ -8,20 +8,16 @@ class TestDataViz(unittest.TestCase):
 
     def test_boxplot_file_created(self):
         outfile = "output.png"
-        dv.boxplot([1], outfile)
+        dv.boxplot([1, 2, 3, 4, 5], outfile)
         self.assertTrue(os.path.exists(outfile))
         os.remove(outfile)
-
-
-
-
         
     def test_histogram_file_name_none(self):
         self.assertIsNone(dv.histogram(None, None), None)
 
     def test_histogram_file_created(self):
         outfile = "output.png"
-        dv.histogram([1], outfile)
+        dv.histogram([1, 2, 3, 4, 5], outfile)
         self.assertTrue(os.path.exists(outfile))
         os.remove(outfile)
 
@@ -30,7 +26,7 @@ class TestDataViz(unittest.TestCase):
 
     def test_combo_file_created(self):
         outfile = "output.png"
-        dv.combo([1], outfile)
+        dv.combo([1, 2, 3, 4, 5], outfile)
         self.assertTrue(os.path.exists(outfile))
         os.remove(outfile)
 
