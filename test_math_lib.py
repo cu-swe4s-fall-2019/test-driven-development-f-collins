@@ -27,6 +27,17 @@ class TestMathlib(unittest.TestCase):
                 L.append(random.uniform(0,100))
             self.assertAlmostEqual(ml.list_mean(L), statistics.mean(L))
 
+    def test_list_mean_non_number_in_list(self):
+        L = []
+        for j in range(10):
+            L.append(random.uniform(0,100))
+        mean = statistics.mean(L)
+        L.append('x')
+        random.shuffle(L)
+        self.assertAlmostEqual(ml.list_mean(L), mean)
+
+
+
 if __name__ == "__main__":
     unittest.main()
 
