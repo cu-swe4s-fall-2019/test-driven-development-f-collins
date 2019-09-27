@@ -59,8 +59,16 @@ class TestMathlib(unittest.TestCase):
                 L.append(random.uniform(0,100))
             self.assertAlmostEqual(ml.list_stdev(L), statistics.stdev(L))
 
+    def test_list_stdev_non_number_in_list(self):
+        L = []
+        for j in range(10):
+            L.append(random.uniform(0,100))
+        stdev = statistics.stdev(L)
+        L.append('x')
+        random.shuffle(L)
+        self.assertAlmostEqual(ml.list_stdev(L), stdev)
+
 
 
 if __name__ == "__main__":
     unittest.main()
-
