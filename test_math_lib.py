@@ -39,6 +39,9 @@ class TestMathlib(unittest.TestCase):
     def test_list_stdev_none(self):
         self.assertIsNone(ml.list_mean(None), None)
 
+    def test_list_stdev_empty_list(self):
+        self.assertIsNone(ml.list_mean([]), None)
+
 
 
 if __name__ == "__main__":
