@@ -50,7 +50,7 @@ class TestMathlib(unittest.TestCase):
             L = []
             for j in range(10):
                 L.append(random.randint(0,100))
-            self.assertEqual(ml.list_stdev(L), statistics.stdev(L))
+            self.assertAlmostEqual(ml.list_stdev(L), statistics.stdev(L))
 
     def test_list_stdev_random_float_list(self):
         for i in range(100):
