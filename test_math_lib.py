@@ -3,6 +3,7 @@ import math_lib as ml
 import random
 import statistics
 
+
 class TestMathlib(unittest.TestCase):
     def test_list_mean_none(self):
         self.assertIsNone(ml.list_mean(None), None)
@@ -17,20 +18,20 @@ class TestMathlib(unittest.TestCase):
         for i in range(100):
             L = []
             for j in range(10):
-                L.append(random.randint(0,100))
+                L.append(random.randint(0, 100))
             self.assertEqual(ml.list_mean(L), statistics.mean(L))
 
     def test_list_mean_random_float_list(self):
         for i in range(100):
             L = []
             for j in range(10):
-                L.append(random.uniform(0,100))
+                L.append(random.uniform(0, 100))
             self.assertAlmostEqual(ml.list_mean(L), statistics.mean(L))
 
     def test_list_mean_non_number_in_list(self):
         L = []
         for j in range(10):
-            L.append(random.uniform(0,100))
+            L.append(random.uniform(0, 100))
         mean = statistics.mean(L)
         L.append('x')
         random.shuffle(L)
@@ -49,25 +50,24 @@ class TestMathlib(unittest.TestCase):
         for i in range(100):
             L = []
             for j in range(10):
-                L.append(random.randint(0,100))
+                L.append(random.randint(0, 100))
             self.assertAlmostEqual(ml.list_stdev(L), statistics.stdev(L))
 
     def test_list_stdev_random_float_list(self):
         for i in range(100):
             L = []
             for j in range(10):
-                L.append(random.uniform(0,100))
+                L.append(random.uniform(0, 100))
             self.assertAlmostEqual(ml.list_stdev(L), statistics.stdev(L))
 
     def test_list_stdev_non_number_in_list(self):
         L = []
         for j in range(10):
-            L.append(random.uniform(0,100))
+            L.append(random.uniform(0, 100))
         stdev = statistics.stdev(L)
         L.append('x')
         random.shuffle(L)
         self.assertAlmostEqual(ml.list_stdev(L), stdev)
-
 
 
 if __name__ == "__main__":
