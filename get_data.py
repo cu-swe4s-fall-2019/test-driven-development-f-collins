@@ -1,3 +1,4 @@
 
 def read_stdin_col(col_num):
-    return None
+    if col_num == None:
+        return None
