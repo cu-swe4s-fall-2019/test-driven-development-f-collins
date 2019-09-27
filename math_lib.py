@@ -14,4 +14,7 @@ def list_mean(L):
     return sum(L)/len(L)
 
 def list_stdev(L):
-    return None
+    if L == None:
+        return None
+    if len(L) == 0:
+        return None
