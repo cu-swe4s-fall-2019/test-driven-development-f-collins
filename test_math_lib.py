@@ -36,6 +36,9 @@ class TestMathlib(unittest.TestCase):
         random.shuffle(L)
         self.assertAlmostEqual(ml.list_mean(L), mean)
 
+    def test_list_stdev_none(self):
+        self.assertIsNone(ml.list_mean(None), None)
+
 
 
 if __name__ == "__main__":
