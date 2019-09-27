@@ -1,10 +1,13 @@
 import matplotlib as mpl
-mpl.use('agg')
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import math_lib as ml
 
+
+mpl.use('agg')
+
+
 def boxplot(L, out_file_name):
-    if out_file_name == None:
+    if out_file_name is None:
         return None
 
     fig = plt.figure(figsize=(5, 5), dpi=300)
@@ -12,13 +15,14 @@ def boxplot(L, out_file_name):
     ax = fig.add_subplot(1, 1, 1)
     ax.boxplot(L)
 
-    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " + str(ml.list_stdev(L)))
+    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " +
+                 str(ml.list_stdev(L)))
 
     plt.savefig(out_file_name, bbox_inches='tight')
 
 
 def histogram(L, out_file_name):
-    if out_file_name == None:
+    if out_file_name is None:
         return None
 
     fig = plt.figure(figsize=(5, 5), dpi=300)
@@ -26,12 +30,14 @@ def histogram(L, out_file_name):
     ax = fig.add_subplot(1, 1, 1)
     ax.hist(L, bins=10)
 
-    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " + str(ml.list_stdev(L)))
+    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " +
+                 str(ml.list_stdev(L)))
 
     plt.savefig(out_file_name, bbox_inches='tight')
 
+
 def combo(L, out_file_name):
-    if out_file_name == None:
+    if out_file_name is None:
         return None
 
     fig = plt.figure(figsize=(8, 5), dpi=300)
@@ -42,6 +48,7 @@ def combo(L, out_file_name):
     ax = fig.add_subplot(1, 2, 2)
     ax.hist(L, bins=10)
 
-    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " + str(ml.list_stdev(L)))
+    fig.suptitle("mean: " + str(ml.list_mean(L)) + " stddev: " +
+                 str(ml.list_stdev(L)))
 
     plt.savefig(out_file_name, bbox_inches='tight')

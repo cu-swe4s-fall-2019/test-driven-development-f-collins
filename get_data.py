@@ -1,7 +1,8 @@
 import sys
 
+
 def read_stdin_col(col_num):
-    if col_num == None:
+    if col_num is None:
         return None
 
     data = []

@@ -2,6 +2,7 @@ import argparse
 import get_data as gd
 import data_viz as dv
 
+
 def main():
     parser = argparse.ArgumentParser(
             description='Program that allows one to create a boxplot, ' +
@@ -37,8 +38,6 @@ def main():
         dv.histogram(data, out_file_name)
     if plot_type == "combo":
         dv.combo(data, out_file_name)
-
-
 
 
 if __name__ == '__main__':

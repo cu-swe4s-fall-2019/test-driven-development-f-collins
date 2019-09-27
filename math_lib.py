@@ -1,7 +1,8 @@
 import math
 
+
 def list_mean(L):
-    if L == None:
+    if L is None:
         return None
 
     for l in L:
@@ -17,8 +18,9 @@ def list_mean(L):
 
     return sum(L)/len(L)
 
+
 def list_stdev(L):
-    if L == None:
+    if L is None:
         return None
     if len(L) == 0:
         return None

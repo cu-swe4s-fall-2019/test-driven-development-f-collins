@@ -2,6 +2,7 @@ import unittest
 import os
 import data_viz as dv
 
+
 class TestDataViz(unittest.TestCase):
     def test_boxplot_file_name_none(self):
         self.assertIsNone(dv.boxplot(None, None), None)
@@ -11,7 +12,7 @@ class TestDataViz(unittest.TestCase):
         dv.boxplot([1, 2, 3, 4, 5], outfile)
         self.assertTrue(os.path.exists(outfile))
         os.remove(outfile)
-        
+
     def test_histogram_file_name_none(self):
         self.assertIsNone(dv.histogram(None, None), None)
 
@@ -29,6 +30,7 @@ class TestDataViz(unittest.TestCase):
         dv.combo([1, 2, 3, 4, 5], outfile)
         self.assertTrue(os.path.exists(outfile))
         os.remove(outfile)
+
 
 if __name__ == "__main__":
     unittest.main()
